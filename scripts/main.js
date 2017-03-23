@@ -1,3 +1,10 @@
+/* 
+Only works for one task at a time 
+need to add eventlisteners to all of them at once ?
+*/
+
+
+
 var incompletedItemHolder = document.getElementById("incompleted-items");
 var completedItemHolder = document.getElementById("completed-items");
 var addButton = document.getElementsByTagName("button")[0];
@@ -21,6 +28,8 @@ function createListItem(taskString) {
 	listItem.appendChild(checkbox);
 
 	listItem.classList.add("listItems");
+
+	// listItem.addEventListener("click", checkboxVerification);
 	
 	return listItem;
 }
@@ -33,13 +42,22 @@ function addListItem() {
 
 	incompletedItemHolder.appendChild(listItem);
 
-	var listItem = document.getElementById("incompleteItem");
+	var listItem = document.getElementById("incompleteItem");	
 
-	listItem.addEventListener("click", checkboxVerification);
+	startHerUp();
 
 }
 
+
 addButton.addEventListener("click", addListItem);
+
+
+function startHerUp() {	
+	var taskList = document.querySelectorAll("li");
+	for ( var i = 0; i < taskList.length; i++ ) {
+		taskList[i].addEventListener("click", checkboxVerification);
+	}
+}
 
 
 function checkboxVerification() {
@@ -52,6 +70,7 @@ function checkboxVerification() {
 		} else {
 			console.log("No items are checked...");
 		}
+
 		
 }
 
@@ -62,9 +81,8 @@ function deleteListItem (listItem) {
 }
 
 function addCompletedItem(listItem) {
-	console.log("Adding completed item...");
+	console.log("Adding completed task...");
 	var listItem = listItem.parentNode;
-	listItem.classList.add("completedItemStyle");
 	completedItemHolder.appendChild(listItem);
 }
 
