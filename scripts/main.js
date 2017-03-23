@@ -1,10 +1,3 @@
-/* 
-Only works for one task at a time 
-need to add eventlisteners to all of them at once ?
-*/
-
-
-
 var incompletedItemHolder = document.getElementById("incompleted-items");
 var completedItemHolder = document.getElementById("completed-items");
 var addButton = document.getElementsByTagName("button")[0];
