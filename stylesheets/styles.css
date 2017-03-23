@@ -1,0 +1,61 @@
+.container {
+	display: block;
+	width: 400px;
+	margin: 50px auto 0;
+	background-color: rgb(255,255,255);
+}
+
+p {
+	font-family: Arial-BoldMT;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.header {
+	font-family: Arial-BoldMT;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+ul {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.complete-list {
+	display: block;
+	font-family: Arial;
+	font-size: 15px;
+	width: 150px;
+	margin: auto;
+	padding-right: 30px; 
+	text-align: center;
+	text-decoration: line-through;
+}
+
+li {
+	display: block;
+	font-family: Arial;
+	font-size: 15px;
+	width: 150px;
+	margin: auto;
+	padding-right: 30px; 
+	text-align: center;
+}
+
+.addField, .addButton {
+	display: block;
+	margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'Arial-BoldMT';
+    src: url('fonts/Arial-BoldMT.woff');
+    src: url('fonts/Arial-BoldMT.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
