@@ -1,7 +1,10 @@
+
 var incompletedItemHolder = document.getElementById("incompleted-items");
 var completedItemHolder = document.getElementById("completed-items");
 var addButton = document.getElementsByTagName("button")[0];
 var userInput = document.getElementById("newText");
+var incompleteCounter = 0;
+var completeCounter = 0;
 
 
 function createListItem(taskString) {
@@ -11,7 +14,6 @@ function createListItem(taskString) {
 	var checkbox = document.createElement("input");
 	
 	label.innerHTML = taskString;
-	label.htmlFor = "id";
 	
 	checkbox.type = "checkbox";
 	checkbox.value = "value";
@@ -21,8 +23,6 @@ function createListItem(taskString) {
 	listItem.appendChild(checkbox);
 
 	listItem.classList.add("listItems");
-
-	// listItem.addEventListener("click", checkboxVerification);
 	
 	return listItem;
 }
@@ -35,8 +35,17 @@ function addListItem() {
 
 	incompletedItemHolder.appendChild(listItem);
 
-	var listItem = document.getElementById("incompleteItem");	
+	userInput.value = "";	
 
+	incompleteCounter += 1;
+
+	if ( incompleteCounter > 1 ) {
+		deleteCounter();
+		updateCounter();
+	} else {
+	updateCounter();
+	}
+	
 	startHerUp();
 
 }
@@ -77,5 +86,27 @@ function addCompletedItem(listItem) {
 	console.log("Adding completed task...");
 	var listItem = listItem.parentNode;
 	completedItemHolder.appendChild(listItem);
+	completeCounter += 1;
+	deleteCounter();
+	updateCounter();
 }
+
+function deleteCounter() {
+	document.getElementById("counterId").remove();
+}
+
+function updateCounter(){
+
+	var counterText = completeCounter + " / " + incompleteCounter + " completed"; 
+
+	var iElement = document.createElement("p");
+
+	iElement.id = "counterId";
+	iElement.innerHTML = counterText;
+	iElement.classList.add("counterElement");
+
+	document.getElementById("counter").appendChild(iElement);
+
+}
+
 
