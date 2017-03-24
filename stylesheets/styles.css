@@ -5,6 +5,13 @@
 	background-color: rgb(255,255,255);
 }
 
+.counterElement {
+	font-family: Arial-BoldMT;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
 p {
 	font-family: Arial-BoldMT;
 	font-size: 25px;
@@ -27,7 +34,7 @@ ul {
 
 .complete-list {
 	display: block;
-	font-family: Arial;
+	font-family: Arial-BoldMT;
 	font-size: 15px;
 	width: 150px;
 	margin: auto;
@@ -38,7 +45,7 @@ ul {
 
 li {
 	display: block;
-	font-family: Arial;
+	font-family: Arial-BoldMT;
 	font-size: 15px;
 	width: 150px;
 	margin: auto;
@@ -58,4 +65,6 @@ li {
     font-weight: normal;
     font-style: normal;
 }
+
+
 
